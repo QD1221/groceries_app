@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app/src/ui/shop_component.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 8),
@@ -61,15 +64,11 @@ class _MainPageState extends State<MainPage> {
               Expanded(
                 child: ValueListenableBuilder<int>(
                     valueListenable: _bottomTabIdx,
-                    builder: (context, pageIndex, child){
+                    builder: (context, pageIndex, child) {
                       return IndexedStack(
                         index: pageIndex,
                         children: [
-                          Container(
-                            child: Center(
-                              child: Text('Shops'),
-                            ),
-                          ),
+                          ShopComponent(),
                           Container(
                             child: Center(
                               child: Text('Buy'),
