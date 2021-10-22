@@ -81,6 +81,7 @@ class _ShopComponentState extends State<ShopComponent> {
                                           children: [
                                             CircleAvatar(
                                               radius: 32,
+                                              backgroundColor: Colors.grey[100],
                                             ),
                                             SizedBox(height: 8),
                                             Text(
@@ -131,14 +132,186 @@ class _ShopComponentState extends State<ShopComponent> {
                                         width:
                                             MediaQuery.of(context).size.width -
                                                 84,
-                                        child: Card(elevation: 4),
+                                        child: Card(
+                                          elevation: 4,
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                      image: DecorationImage(
+                                                          image: NetworkImage(
+                                                              'https://cdn.pixabay.com/photo/2015/03/26/09/42/breakfast-690128__340.jpg'),
+                                                          fit: BoxFit.cover)),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: -160,
+                                                top: -64,
+                                                child: CircleAvatar(
+                                                  backgroundColor: Colors.white,
+                                                  radius: 200,
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 16,
+                                                top: 24,
+                                                bottom: 24,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Carrefour',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 8),
+                                                      child: Text(
+                                                          '15% off on personal core'),
+                                                    ),
+                                                    SizedBox(height: 24),
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.green[50],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(4),
+                                                      ),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 12,
+                                                              vertical: 8),
+                                                      child: Center(
+                                                        child: Text(
+                                                          'SHOP NOW',
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 12,
+                                                            color: Colors.green,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
                                       );
                                     }),
                               )
                             ],
                           ),
                         ),
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.fromLTRB(16, 0, 0, 16),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Origin again',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                    icon: Icon(Icons.arrow_forward_ios),
+                                    onPressed: () {},
+                                    iconSize: 18,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 72,
+                                child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: 10,
+                                    itemBuilder: (context, index) {
+                                      return SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width -
+                                                84,
+                                        child: Card(
+                                          elevation: 4,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              children: [
+                                                CircleAvatar(
+                                                  backgroundColor: Colors.grey[100],
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    children: [
+                                                      Text('Coca Cola', style: TextStyle(
+                                                        fontWeight: FontWeight.bold
+                                                      ),),
+                                                      Text('AED 2.30 Lidl', style: TextStyle(
+                                                        color: Colors.grey
+                                                      ),),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Spacer(),
+                                                Padding(
+                                                  padding: const EdgeInsets.symmetric(vertical: 8),
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.green[50],
+                                                      borderRadius:
+                                                      BorderRadius
+                                                          .circular(4),
+                                                    ),
+                                                    padding:
+                                                    EdgeInsets.symmetric(
+                                                        horizontal: 8,
+                                                        vertical: 4),
+                                                    child: Center(
+                                                      child: Text(
+                                                        'REORDER',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                          FontWeight.bold,
+                                                          fontSize: 12,
+                                                          color: Colors.green,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
